@@ -1,0 +1,19 @@
+{
+    "average_aqi": 87.9,
+    "median_aqi": 80.12,
+    "standard_deviation": 28.63,
+    "max_aqi": 214.62,
+    "min_aqi": 38.79,
+    "weekday_aqi": 87.95,
+    "weekend_aqi": 87.77,
+    "most_critical_pollutant": "CO",
+    "average_concentration": 449.39,
+    "who_exceedance_percent": 24.37,
+    "seasonal_avg_aqi": {
+        "Autumn": 86.82760989010988,
+        "Spring": 79.86564009661836,
+        "Summer": 76.3035,
+        "Winter": 110.01666666666667
+    },
+    "extreme_days_count": 52
+}
