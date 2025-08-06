@@ -46,10 +46,16 @@ jobs:
         echo "▶ Running predict.py..."
         python src/predict.py || { echo "❌ Prediction failed"; exit 1; }
 
-    - name: 📤 Commit Updated Files (Optional)
+    - name: 📤 Commit Latest AQI Predictions
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add processed_data/ lstm_model/ predictions/
-        git commit -m "🔄 Auto: Daily AQI update & forecast [skip ci]" || echo "✅ No changes to commit"
+
+        if [ -f predictions/next_3_days.csv ]; then
+        git add predictions/next_3_days.csv
+        git commit -m "🔮 Auto: Daily AQI Prediction Update [skip ci]" || echo "✅ No changes to commit"
         git push || echo "⚠️ Nothing to push or push failed"
+        else
+        echo "❌ Prediction file not found!"
+        fi
+
