@@ -26,22 +26,29 @@ jobs:
         pip install -r requirements.txt
 
     - name: 🗂️ Step 1 — Fetch and Update Daily Data
-      run: python src/update_daily_data.py
+      run: |
+        echo "▶ Running update_daily_data.py..."
+        python src/update_daily_data.py || { echo "❌ Failed to update data"; exit 1; }
 
     - name: 🧹 Step 2 — Preprocess Updated Data
-      run: python src/preprocess_daily_data.py
+      run: |
+        echo "▶ Running preprocess_daily_data.py..."
+        python src/preprocess_daily_data.py || { echo "❌ Failed to preprocess"; exit 1; }
 
     - name: 🧠 Step 3 — Train LSTM Model
-      run: python src/lstm_model_training.py
+      run: |
+        echo "▶ Running lstm_model_training.py..."
+        python src/lstm_model_training.py || { echo "❌ Model training failed"; exit 1; }
 
     - name: 🔮 Step 4 — Predict Next 3 Days AQI
-      run: python src/predict.py
+      run: |
+        echo "▶ Running predict.py..."
+        python src/predict.py || { echo "❌ Prediction failed"; exit 1; }
 
     - name: 📤 Commit Updated Files (Optional)
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add processed_data/ lstm_model/ predictions/
-        git commit -m "🔄 Auto: Daily AQI update & forecast [skip ci]" || echo "No changes to commit"
-        git push
-
+        git commit -m "🔄 Auto: Daily AQI update & forecast [skip ci]" || echo "✅ No changes to commit"
+        git push || echo "⚠️ Nothing to push or push failed"
