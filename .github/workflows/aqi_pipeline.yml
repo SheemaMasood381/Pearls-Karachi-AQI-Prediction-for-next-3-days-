@@ -2,8 +2,9 @@ name: Karachi AQI Daily CI/CD Pipeline
 
 on:
   push:
-    paths:
-      - 'src/**'
+    branches:
+      - main
+
   schedule:
     - cron: '0 3 * * *'  # Every day at 3 AM UTC (8 AM PKT)
 
