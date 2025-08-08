@@ -10,11 +10,15 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 ---
 
-## 🚀 Live Demo
+| Tab | Preview |
+|-----|--------|
+| 📊 Overview | ![Overview](UI/tab1.png) |
+| 🧭 WHO Analysis | ![WHO Analysis](UI/tab2.png) |
+| 📈 Monthly Trends | ![Monthly Trends](UI/tab3.png) |
+| 💨 Pollutant Breakdown | ![Pollutants](UI/tab4.png) |
+| 🕒 Logs | ![Logs](UI/tab5.png) |
 
-[🌐 Launch the app](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com)
-
----
+-----------
 
 ## 🌟 Key Features
 
