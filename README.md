@@ -17,6 +17,22 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 
 -----------
+<table style="width:100%; table-layout: fixed;">
+  <tr>
+    <th>📊 Overview</th>
+    <th>🧭 WHO Analysis</th>
+    <th>📈 Monthly Trends</th>
+    <th>💨 Pollutant Breakdown</th>
+    <th>🕒 Logs</th>
+  </tr>
+  <tr>
+    <td><img src="UI/tab1.png" width="100%"/></td>
+    <td><img src="UI/tab2.png" width="100%"/></td>
+    <td><img src="UI/tab3.png" width="100%"/></td>
+    <td><img src="UI/tab4.png" width="100%"/></td>
+    <td><img src="UI/tab5.png" width="100%"/></td>
+  </tr>
+</table>
 
 ## 🌟 Key Features
 
