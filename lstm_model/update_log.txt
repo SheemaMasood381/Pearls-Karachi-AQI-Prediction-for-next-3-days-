@@ -1,2 +1,4 @@
-Model updated on 2025-08-06 01:43:28
-Model updated on 2025-08-07 01:00:10
+{"timestamp": "2025-08-08 05:58:55", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.75, "RMSE": 0.83, "R2": 0.9863, "note": "EarlyStopping(patience=20)"}
+{"timestamp": "2025-08-08 06:03:48", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.88, "RMSE": 1.08, "R2": 0.9823, "note": "EarlyStopping(patience=20)"}
+{"timestamp": "2025-08-08 06:05:31", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.76, "RMSE": 0.88, "R2": 0.9855, "note": "EarlyStopping(patience=20)"}
+{"timestamp": "2025-08-08 06:08:12", "status": "UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.56, "RMSE": 0.53, "R2": 0.9913, "note": "EarlyStopping(patience=20)"}

@@ -64,7 +64,7 @@ def preprocess_data():
     for col in ["PM2.5", "CO"]:
         if col in df.columns:
             df[f"log_{col}"] = np.log1p(df[col])
-            df.drop(columns=[col], inplace=True)
+            #df.drop(columns=[col], inplace=True)
             print(f"✅ Log transformed and dropped: {col}")
 
     print("📏 Applying IQR capping...")

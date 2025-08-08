@@ -78,8 +78,8 @@ print("\n📈 Next 3 Days AQI Prediction:")
 print(results.to_string(index=False))
 
 # Save results
-os.makedirs("outputs/predictions", exist_ok=True)
-results.to_csv("outputs/predictions/next_3_days.csv", index=False)
+os.makedirs("predictions", exist_ok=True)
+results.to_csv("predictions/next_3_days.csv", index=False)
 
 
 def predict_next_3_days():
@@ -131,3 +131,8 @@ def predict_next_3_days():
     })
 
     return results
+
+if __name__ == "__main__":
+    results = predict_next_3_days()
+    print("\n📈 Next 3 Days AQI Prediction:")
+    print(results.to_string(index=False))

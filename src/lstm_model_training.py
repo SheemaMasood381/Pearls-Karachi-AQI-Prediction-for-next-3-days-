@@ -112,9 +112,9 @@ if os.path.exists(METRICS_PATH):
 # ----------------------
 # Save Model if Better
 # ----------------------
+
 if update_model:
     model.save(MODEL_PATH)
-
     joblib.dump(scaler_X, SCALER_X_PATH)
     joblib.dump(scaler_y, SCALER_Y_PATH)
 
@@ -126,17 +126,27 @@ if update_model:
     with open(METRICS_PATH, "w") as f:
         json.dump(metrics, f, indent=2)
 
-    with open(LOG_PATH, "a") as log:
-        log.write(f"Model updated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-
     print("💾 Model, scalers, and metrics updated.")
 else:
-    with open(LOG_PATH, "a") as log:
-        log.write(f"Model NOT updated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    print("❌ Model not saved. Performance not improved.")
 
-# ----------------------
-# Show Update Log Last Line
-# ----------------------
+# ✅ LOGGING BLOCK
+log_entry = {
+    "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+    "status": "UPDATED" if update_model else "NOT UPDATED",
+    "model_name": "lstm_aqi_model.keras",
+    "train_samples": len(X_train),
+    "test_samples": len(X_test),
+    "MAE": round(mae, 2),
+    "RMSE": round(rmse, 2),
+    "R2": round(r2, 4),
+    "note": "EarlyStopping(patience=20)"
+}
+
+with open(LOG_PATH, "a") as log:
+    log.write(json.dumps(log_entry) + "\n")
+
+# Show last update
 if os.path.exists(LOG_PATH):
     with open(LOG_PATH, "r") as log:
         lines = log.readlines()
