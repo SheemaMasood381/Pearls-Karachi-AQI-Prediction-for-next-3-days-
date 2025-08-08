@@ -18,6 +18,7 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 | 💨 Pollutant Breakdown | ![Pollutants](UI/tab4.png) |
 | 🕒 Logs | ![Logs](UI/tab5.png) |
 
+<p align="center"> <img src="UI/tab1.png" alt="Overview Tab" width="45%"/> <img src="UI/tab2.png" alt="WHO Analysis Tab" width="45%"/> </p> <p align="center"> <img src="UI/tab3.png" alt="Monthly Trends Tab" width="45%"/> <img src="UI/tab4.png" alt="Pollutants Breakdown Tab" width="45%"/> </p> <p align="center"> <img src="UI/tab5.png" alt="Logs Tab" width="45%"/> </p>
 -----------
 
 ## 🌟 Key Features
