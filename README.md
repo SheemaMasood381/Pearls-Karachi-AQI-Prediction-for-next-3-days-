@@ -11,13 +11,10 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 ---
 
 
-| Tab | Preview |
-|-----|---------|
-| 📊 Overview | <img src="UI/tab1.png" width="150"> |
-| 🧭 WHO Analysis | <img src="UI/tab2.png" width="150"> |
-| 📈 Monthly Trends | <img src="UI/tab3.png" width="150"> |
-| 💨 Pollutant Breakdown | <img src="UI/tab4.png" width="150"> |
-| 🕒 Logs | <img src="UI/tab5.png" width="150"> |
+| 📊 Overview | 🧭 WHO Analysis | 📈 Monthly Trends | 💨 Pollutant Breakdown | 🕒 Logs |
+|-------------|-----------------|-------------------|------------------------|---------|
+| <img src="UI/tab1.png" width="120"/> | <img src="UI/tab2.png" width="120"/> | <img src="UI/tab3.png" width="120"/> | <img src="UI/tab4.png" width="120"/> | <img src="UI/tab5.png" width="120"/> |
+
 
 -----------
 
