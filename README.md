@@ -77,7 +77,7 @@ karachi-aqi-app/
 │   ├── *.ipynb                      # Interactive notebooks (EDA, ML, plots)
 │   └── visualizations/              # Saved charts/images from notebooks
 └── .github/workflows/
-    └── ci_daily.yml                 # CI/CD pipeline (auto daily update)
+    └── aqi_pipeline.yml               # CI/CD pipeline (auto daily update)
 ```
 ---
 
@@ -102,7 +102,7 @@ karachi-aqi-app/
    - Loads all above data.
    - Provides multi-tab, interactive visual analytics and forecast.
 
-6. **CI/CD (`.github/workflows/ci_daily.yml`):**
+6. **CI/CD (`.github/workflows/aqi_pipeline.yml`):**
    - Runs entire pipeline daily (and on push) via GitHub Actions.
    - Commits latest prediction to repo for live dashboard.
 
