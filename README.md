@@ -8,17 +8,23 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 📍 This is a **Real-Time Karachi AQI Prediction Web App** that forecasts the next **3 days of air quality**, visualizes trends, and compares pollution levels with **WHO standards**.
 
----
-
-| Tab | Preview |
-|-----|--------|
-| 📊 Overview | ![Overview](UI/tab1.png) |
-| 🧭 WHO Analysis | ![WHO Analysis](UI/tab2.png) |
-| 📈 Monthly Trends | ![Monthly Trends](UI/tab3.png) |
-| 💨 Pollutant Breakdown | ![Pollutants](UI/tab4.png) |
-| 🕒 Logs | ![Logs](UI/tab5.png) |
-
 -----------
+<table style="width:100%; table-layout: fixed;">
+  <tr>
+    <th>📊 Overview</th>
+    <th>🧭 WHO Analysis</th>
+    <th>📈 Monthly Trends</th>
+    <th>💨 Pollutant Breakdown</th>
+    <th>🕒 Logs</th>
+  </tr>
+  <tr>
+    <td><img src="UI/tab1.png" width="100%"/></td>
+    <td><img src="UI/tab2.png" width="100%"/></td>
+    <td><img src="UI/tab3.png" width="100%"/></td>
+    <td><img src="UI/tab4.png" width="100%"/></td>
+    <td><img src="UI/tab5.png" width="100%"/></td>
+  </tr>
+</table>
 
 ## 🌟 Key Features
 
@@ -71,7 +77,7 @@ karachi-aqi-app/
 │   ├── *.ipynb                      # Interactive notebooks (EDA, ML, plots)
 │   └── visualizations/              # Saved charts/images from notebooks
 └── .github/workflows/
-    └── ci_daily.yml                 # CI/CD pipeline (auto daily update)
+    └── aqi_pipeline.yml               # CI/CD pipeline (auto daily update)
 ```
 ---
 
@@ -96,7 +102,7 @@ karachi-aqi-app/
    - Loads all above data.
    - Provides multi-tab, interactive visual analytics and forecast.
 
-6. **CI/CD (`.github/workflows/ci_daily.yml`):**
+6. **CI/CD (`.github/workflows/aqi_pipeline.yml`):**
    - Runs entire pipeline daily (and on push) via GitHub Actions.
    - Commits latest prediction to repo for live dashboard.
 
