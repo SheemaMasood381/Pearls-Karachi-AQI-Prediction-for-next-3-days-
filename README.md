@@ -2,6 +2,12 @@
 
 A comprehensive, production-grade web application for visualizing, analyzing, and forecasting Karachi's Air Quality Index (AQI). The project leverages advanced machine learning (LSTM) for prediction, modern data engineering, and a Streamlit-powered, mobile-friendly dashboard.
 
+[![Render](https://img.shields.io/badge/Live%20Demo-Visit%20Now-green?logo=render)](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com)
+[![Python](https://img.shields.io/badge/Built%20With-Python%203.9-blue.svg?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Powered%20By-Streamlit-fc4f4f?logo=streamlit)](https://streamlit.io/)
+
+📍 This is a **Real-Time Karachi AQI Prediction Web App** that forecasts the next **3 days of air quality**, visualizes trends, and compares pollution levels with **WHO standards**.
+
 ---
 
 ## 🚀 Live Demo
