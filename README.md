@@ -8,14 +8,6 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 📍 This is a **Real-Time Karachi AQI Prediction Web App** that forecasts the next **3 days of air quality**, visualizes trends, and compares pollution levels with **WHO standards**.
 
----
-
-
-| 📊 Overview | 🧭 WHO Analysis | 📈 Monthly Trends | 💨 Pollutant Breakdown | 🕒 Logs |
-|-------------|-----------------|-------------------|------------------------|---------|
-| <img src="UI/tab1.png" width="120"/> | <img src="UI/tab2.png" width="120"/> | <img src="UI/tab3.png" width="120"/> | <img src="UI/tab4.png" width="150"/> | <img src="UI/tab5.png" width="150"/> |
-
-
 -----------
 <table style="width:100%; table-layout: fixed;">
   <tr>
