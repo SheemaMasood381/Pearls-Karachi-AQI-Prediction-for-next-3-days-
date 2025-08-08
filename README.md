@@ -10,15 +10,15 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 ---
 
-| Tab | Preview |
-|-----|--------|
-| 📊 Overview | ![Overview](UI/tab1.png) |
-| 🧭 WHO Analysis | ![WHO Analysis](UI/tab2.png) |
-| 📈 Monthly Trends | ![Monthly Trends](UI/tab3.png) |
-| 💨 Pollutant Breakdown | ![Pollutants](UI/tab4.png) |
-| 🕒 Logs | ![Logs](UI/tab5.png) |
 
-<p align="center"> <img src="UI/tab1.png" alt="Overview Tab" width="45%"/> <img src="UI/tab2.png" alt="WHO Analysis Tab" width="45%"/> </p> <p align="center"> <img src="UI/tab3.png" alt="Monthly Trends Tab" width="45%"/> <img src="UI/tab4.png" alt="Pollutants Breakdown Tab" width="45%"/> </p> <p align="center"> <img src="UI/tab5.png" alt="Logs Tab" width="45%"/> </p>
+| Tab | Preview |
+|-----|---------|
+| 📊 Overview | <img src="UI/tab1.png" width="150"> |
+| 🧭 WHO Analysis | <img src="UI/tab2.png" width="150"> |
+| 📈 Monthly Trends | <img src="UI/tab3.png" width="150"> |
+| 💨 Pollutant Breakdown | <img src="UI/tab4.png" width="150"> |
+| 🕒 Logs | <img src="UI/tab5.png" width="150"> |
+
 -----------
 
 ## 🌟 Key Features
