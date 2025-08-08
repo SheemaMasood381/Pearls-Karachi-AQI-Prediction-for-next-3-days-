@@ -13,7 +13,7 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 | 📊 Overview | 🧭 WHO Analysis | 📈 Monthly Trends | 💨 Pollutant Breakdown | 🕒 Logs |
 |-------------|-----------------|-------------------|------------------------|---------|
-| <img src="UI/tab1.png" width="120"/> | <img src="UI/tab2.png" width="120"/> | <img src="UI/tab3.png" width="120"/> | <img src="UI/tab4.png" width="120"/> | <img src="UI/tab5.png" width="120"/> |
+| <img src="UI/tab1.png" width="120"/> | <img src="UI/tab2.png" width="120"/> | <img src="UI/tab3.png" width="120"/> | <img src="UI/tab4.png" width="120"/> | <img src="UI/tab5.png" width="150"/> |
 
 
 -----------
