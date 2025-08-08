@@ -45,25 +45,24 @@ karachi-aqi-app/
 │   ├── preprocess_daily_data.py     # Cleans, transforms, feature engineering
 │   ├── lstm_model_training.py       # Trains LSTM model & logs metrics
 │   └── predict.py                   # Predicts next 3 days AQI
+|   └── fetach_data.py               # fetches the data with api
 ├── data/
 │   └── karachi_daily_aqi_weather.csv # Raw daily AQI+weather (auto-updated)
 ├── processed_data/
 │   └── daily_karachi_preprocessed.csv # Cleaned, engineered features
 ├── predictions/
 │   └── next_3_days.csv              # LSTM forecast (auto-updated)
-├── outputs/
-│   ├── models/                      # Saved LSTM model & scalers
-│   ├── logs/                        # Model training/pipeline logs
-│   └── eda/                         # Plots for EDA/app visualizations
 ├── lstm_model/
 │   ├── lstm_aqi_model.keras         # Saved model
 │   ├── scaler_X.pkl, scaler_y.pkl   # Scalers
 │   ├── metrics.json                 # Last model performance
 │   └── update_log.txt               # All update logs
+├── notebooks/                       # Jupyter notebooks for EDA & visualizations
+│   ├── *.ipynb                      # Interactive notebooks (EDA, ML, plots)
+│   └── visualizations/              # Saved charts/images from notebooks
 └── .github/workflows/
     └── ci_daily.yml                 # CI/CD pipeline (auto daily update)
 ```
-
 ---
 
 ## ⚡ End-to-End Pipeline
