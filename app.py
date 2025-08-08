@@ -738,42 +738,49 @@ with tabs[3]:
 # Tab 4: 🕒 Logs
 # ----------------------
 with tabs[4]:
-    st.markdown(f"<h1 style='text-align: center; color: black;'>||Pipeline Logs & Meta Data||</h1>", unsafe_allow_html=True)
-
+    st.markdown(f"<h1 style='text-align: center; color: black;'>|| Pipeline Logs & Meta Data ||</h1>", unsafe_allow_html=True)
+    # Function to load logs
     log_path = "lstm_model/update_log.txt"
 
+    # Load logs function
     def load_logs(log_path):
         if not os.path.exists(log_path):
             return pd.DataFrame()
         with open(log_path, "r") as f:
             log_entries = [json.loads(line) for line in f.readlines()]
         return pd.DataFrame(log_entries)
-
     logs_df = load_logs(log_path)
-    # Optionally: show summary of last update
+
+if logs_df.empty:
+    st.info("No logs available yet. Train the model to generate logs.")
+else:
+    # Step 1: Convert to datetime (optional but safer)
+    logs_df['timestamp'] = pd.to_datetime(logs_df['timestamp'])
+
+    # Step 2: Sort descending
+    logs_df = logs_df.sort_values(by="timestamp", ascending=False)
+
+    # ✅ Step 3: NOW get latest log
     latest = logs_df.iloc[0]
+
+    # Step 4: Show Summary
     st.markdown(f"""
         <hr>
         <h4 style="color:black;">🧾 Latest Update Summary</h4>
         <ul style="color:black; font-size:16px;">
-            <li><strong>Status:</strong> {latest['status']}</li>
-            <li><strong>Date:</strong> {latest['timestamp']}</li>
-            <li><strong>MAE:</strong> {latest['MAE']}</li>
-            <li><strong>RMSE:</strong> {latest['RMSE']}</li>
-            <li><strong>R²:</strong> {latest['R2']}</li>
-            <li><strong>Samples (Train/Test):</strong> {latest['train_samples']} / {latest['test_samples']}</li>
+            <li><strong>Status:</strong> {latest.get('status', 'N/A')}</li>
+            <li><strong>Date:</strong> {latest.get('timestamp', 'N/A')}</li>
+            <li><strong>MAE:</strong> {latest.get('MAE', 'N/A')}</li>
+            <li><strong>RMSE:</strong> {latest.get('RMSE', 'N/A')}</li>
+            <li><strong>R²:</strong> {latest.get('R2', 'N/A')}</li>
+            <li><strong>Samples (Train/Test):</strong> {latest.get('train_samples', 'N/A')} / {latest.get('test_samples', 'N/A')}</li>
         </ul>
-        """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-    if logs_df.empty:
-        st.info("No logs available yet. Train the model to generate logs.")
-    else:
-        logs_df = logs_df.sort_values(by="timestamp", ascending=False)
-        st.dataframe(logs_df, use_container_width=True)
-
-        
-
+    # Step 5: Show full logs table
     st.markdown("<hr style='border: 1px solid black;'>", unsafe_allow_html=True)
+    st.dataframe(logs_df, use_container_width=True)
+
 
 #--------
 # Footer
