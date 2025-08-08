@@ -2,13 +2,23 @@
 
 A comprehensive, production-grade web application for visualizing, analyzing, and forecasting Karachi's Air Quality Index (AQI). The project leverages advanced machine learning (LSTM) for prediction, modern data engineering, and a Streamlit-powered, mobile-friendly dashboard.
 
+[![Render](https://img.shields.io/badge/Live%20Demo-Visit%20Now-green?logo=render)](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com)
+[![Python](https://img.shields.io/badge/Built%20With-Python%203.9-blue.svg?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Powered%20By-Streamlit-fc4f4f?logo=streamlit)](https://streamlit.io/)
+
+📍 This is a **Real-Time Karachi AQI Prediction Web App** that forecasts the next **3 days of air quality**, visualizes trends, and compares pollution levels with **WHO standards**.
+
 ---
 
-## 🚀 Live Demo
+| Tab | Preview |
+|-----|--------|
+| 📊 Overview | ![Overview](UI/tab1.png) |
+| 🧭 WHO Analysis | ![WHO Analysis](UI/tab2.png) |
+| 📈 Monthly Trends | ![Monthly Trends](UI/tab3.png) |
+| 💨 Pollutant Breakdown | ![Pollutants](UI/tab4.png) |
+| 🕒 Logs | ![Logs](UI/tab5.png) |
 
-[🌐 Launch the app](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com)
-
----
+-----------
 
 ## 🌟 Key Features
 
@@ -45,25 +55,24 @@ karachi-aqi-app/
 │   ├── preprocess_daily_data.py     # Cleans, transforms, feature engineering
 │   ├── lstm_model_training.py       # Trains LSTM model & logs metrics
 │   └── predict.py                   # Predicts next 3 days AQI
+|   └── fetach_data.py               # fetches the data with api
 ├── data/
 │   └── karachi_daily_aqi_weather.csv # Raw daily AQI+weather (auto-updated)
 ├── processed_data/
 │   └── daily_karachi_preprocessed.csv # Cleaned, engineered features
 ├── predictions/
 │   └── next_3_days.csv              # LSTM forecast (auto-updated)
-├── outputs/
-│   ├── models/                      # Saved LSTM model & scalers
-│   ├── logs/                        # Model training/pipeline logs
-│   └── eda/                         # Plots for EDA/app visualizations
 ├── lstm_model/
 │   ├── lstm_aqi_model.keras         # Saved model
 │   ├── scaler_X.pkl, scaler_y.pkl   # Scalers
 │   ├── metrics.json                 # Last model performance
 │   └── update_log.txt               # All update logs
+├── notebooks/                       # Jupyter notebooks for EDA & visualizations
+│   ├── *.ipynb                      # Interactive notebooks (EDA, ML, plots)
+│   └── visualizations/              # Saved charts/images from notebooks
 └── .github/workflows/
     └── ci_daily.yml                 # CI/CD pipeline (auto daily update)
 ```
-
 ---
 
 ## ⚡ End-to-End Pipeline
