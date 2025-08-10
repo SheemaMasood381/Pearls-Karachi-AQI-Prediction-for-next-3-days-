@@ -2,9 +2,11 @@
 
 *Breathe Easier with Tomorrow’s Air Quality Insights*
 
-![Last Commit](https://img.shields.io/github/last-commit/yourusername/https://github.com/SheemaMasood381/Pearls-Karachi-AQI-Prediction-for-next-3-days-)
+
+![Last Commit](https://img.shields.io/github/last-commit/SheemaMasood381/Pearls-Karachi-AQI-Prediction-for-next-3-days)
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter%20notebook-82.6%25-blue)
-![Languages](https://img.shields.io/github/languages/count/yourusername/https://github.com/SheemaMasood381/Pearls-Karachi-AQI-Prediction-for-next-3-days-)
+![Languages](https://img.shields.io/github/languages/count/SheemaMasood381/Pearls-Karachi-AQI-Prediction-for-next-3-days)
+
 
 **Built with the tools and technologies:**
 
