@@ -1,5 +1,5 @@
 
-# Karachi Air Quality Index (AQI) Prediction
+# Pearls' Karachi Air Quality Index (AQI) Prediction
 
 *Breathe Easier with Tomorrow’s Air Quality Insights*
 
