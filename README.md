@@ -28,14 +28,15 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 
 ## 🌟 Key Features
 
-- **Daily AQI & Pollutants:** Interactive view of Karachi's current AQI and pollutant breakdown.
-- **3-Day AQI Forecast:** Next 3 days' AQI predicted using an LSTM deep learning model, updated daily.
-- **Trend Analysis:** Explore seasonal, monthly, and weekday trends with interactive plots.
-- **Pollutant Insights:** Radar and pie charts show pollutant risk vs WHO standards and composition.
-- **WHO Comparison:** Instantly see how Karachi fares against global safety limits.
-- **Logs & Model Stats:** Transparent logs—see last update, model performance, and data pipeline status.
-- **Fully Responsive UI:** Clean, modern, and mobile-friendly with custom CSS and Plotly visuals.
-- **CI/CD Automation:** End-to-end daily update pipeline via GitHub Actions.
+- **Daily AQI & Pollutants** – Interactive view of Karachi's current AQI and pollutant breakdown.
+- **3-Day AQI Forecast** – Next 3 days' AQI predicted using an **LSTM deep learning model**, updated daily.
+- **Trend Analysis** – Explore seasonal, monthly, and weekday trends with interactive plots.
+- **Pollutant Insights** – Radar and pie charts show pollutant risk vs WHO standards and composition.
+- **WHO Comparison** – Instantly see how Karachi fares against global safety limits.
+- **🧠 LIME Model Interpretability** – Local Interpretable Model-agnostic Explanations (LIME) highlight feature contributions for individual AQI predictions, enhancing model transparency and trust.
+- **Logs & Model Stats** – Transparent logs—see last update, model performance, and data pipeline status.
+- **Fully Responsive UI** – Clean, modern, and mobile-friendly with custom CSS and Plotly visuals.
+- **CI/CD Automation** – End-to-end daily update pipeline via GitHub Actions.
 
 ---
 
