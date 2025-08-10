@@ -1,3 +1,42 @@
+# PEARLS-Karachi-AQI-Prediction-for-Next-3-Days
+
+*Breathe Easier with Tomorrow’s Air Quality Insights*
+
+![Last Commit](https://img.shields.io/github/last-commit/yourusername/yourrepo)
+![Jupyter Notebook](https://img.shields.io/badge/jupyter%20notebook-82.6%25-blue)
+![Languages](https://img.shields.io/github/languages/count/yourusername/yourrepo)
+
+**Built with the tools and technologies:**
+
+![JSON](https://img.shields.io/badge/-JSON-black?style=flat-square&logo=json)
+![Markdown](https://img.shields.io/badge/-Markdown-black?style=flat-square&logo=markdown)
+![Keras](https://img.shields.io/badge/-Keras-red?style=flat-square&logo=keras)
+![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=flat-square&logo=streamlit)
+![TensorFlow](https://img.shields.io/badge/-TensorFlow-orange?style=flat-square&logo=tensorflow)
+![Scikit-learn](https://img.shields.io/badge/-Scikit--learn-F7931E?style=flat-square&logo=scikit-learn)
+![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python)
+![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions)
+![Plotly](https://img.shields.io/badge/-Plotly-3F4F75?style=flat-square&logo=plotly)
+![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas)
+
+---
+
+## Overview
+
+**Pearls-Karachi-AQI-Prediction** is an end-to-end tool designed for real-time air quality monitoring and forecasting in Karachi.  
+It integrates data collection, preprocessing, machine learning, and visualization to provide accurate and interpretable AQI predictions.
+
+### Why Pearls-Karachi-AQI-Prediction?
+
+This project helps developers build transparent, predictive environmental dashboards with ease.  
+The core features include:
+
+- 📋 **Data Collection & Preprocessing** – Automates fetching and cleaning environmental data for reliable analysis.
+- 🔮 **Multi-step Forecasting** – Provides 3-day AQI predictions to support proactive health and safety decisions.
+- 🧠 **Model Interpretability** – Uses LIME explanations to demystify model predictions and build trust.
+- ⚙️ **Automated Pipelines** – Seamlessly integrates data updates, model training, and deployment for continuous insights.
+- 📊 **Interactive Visualization** – Empowers users to explore air quality trends through intuitive dashboards.
 # 📍 Pearls' Karachi AQI Dashboard & 3-Day Forecast
 
 A comprehensive, production-grade web application for visualizing, analyzing, and forecasting Karachi's Air Quality Index (AQI). The project leverages advanced machine learning (LSTM) for prediction, modern data engineering, and a Streamlit-powered, mobile-friendly dashboard.
