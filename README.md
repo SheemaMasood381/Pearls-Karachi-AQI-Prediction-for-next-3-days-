@@ -140,7 +140,7 @@ karachi-aqi-app/
 - Predicts next 3 days' AQI.
 - Auto-updates `predictions/next_3_days.csv`.
 
-### 5. LIME Explanations (`src/lime_explanations.py`)
+### 5. LIME Explanations (`src/create_lime.py`)
 - Generates **local explanations** for individual AQI predictions.
 - Produces:
   - `lime_report.html` – interactive breakdown.
