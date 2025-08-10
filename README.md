@@ -1,4 +1,4 @@
-# PEARLS-Karachi-AQI-Prediction-for-Next-3-Days
+# PEARLS-Karachi-Air Quality Index-Prediction-for-Next-3-Days
 
 *Breathe Easier with Tomorrow’s Air Quality Insights*
 
