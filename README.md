@@ -13,8 +13,8 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
   <tr>
     <th>📊 Overview</th>
     <th>🧭 WHO Analysis</th>
-    <th>📈 Monthly Trends</th>
     <th>💨 Pollutants and Lime features' Contribution</th>
+    <th>🧠 General Insights</th>
     <th>🕒 Logs</th>
   </tr>
   <tr>
