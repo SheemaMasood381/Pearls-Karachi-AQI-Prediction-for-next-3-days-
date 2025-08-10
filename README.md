@@ -57,11 +57,12 @@ karachi-aqi-app/
 ├── app.py                           # Main Streamlit dashboard
 ├── requirements.txt                 # Python dependencies
 ├── src/                             # Data & ML pipeline scripts
-│   ├── update_daily_data.py         # Fetches & updates daily data
+|   ├── update_daily_data.py         # Fetches & updates daily data
 │   ├── preprocess_daily_data.py     # Cleans, transforms, feature engineering
 │   ├── lstm_model_training.py       # Trains LSTM model & logs metrics
-│   └── predict.py                   # Predicts next 3 days AQI
-|   └── fetach_data.py               # fetches the data with api
+│   ├── predict.py                   # Predicts next 3 days AQI
+│   ├── fetch_data.py                # Fetches data via APIs
+│   └── lime_explanations.py         # Generates LIME explanations for predictions
 ├── data/
 │   └── karachi_daily_aqi_weather.csv # Raw daily AQI+weather (auto-updated)
 ├── processed_data/
@@ -73,6 +74,10 @@ karachi-aqi-app/
 │   ├── scaler_X.pkl, scaler_y.pkl   # Scalers
 │   ├── metrics.json                 # Last model performance
 │   └── update_log.txt               # All update logs
+├── lime_explanations/                # LIME model interpretability outputs
+│   ├── lime_explanation.html               # Interactive LIME HTML explanation for last prediction
+│   ├── lime_explanation.json         # Plotly JSON chart for dashboard rendering
+│   └── lime_explanation.xlsx # Excel file with feature weights/contributions
 ├── notebooks/                       # Jupyter notebooks for EDA & visualizations
 │   ├── *.ipynb                      # Interactive notebooks (EDA, ML, plots)
 │   └── visualizations/              # Saved charts/images from notebooks
@@ -83,28 +88,39 @@ karachi-aqi-app/
 
 ## ⚡ End-to-End Pipeline
 
-1. **Data Fetch (`src/update_daily_data.py`):**
-   - Pulls daily AQI & weather for Karachi (Open-Meteo API).
-   - Appends/updates new day in `data/karachi_daily_aqi_weather.csv`.
+### 1. Data Fetch (`src/update_daily_data.py`)
+- Pulls daily AQI & weather for Karachi (Open-Meteo API).
+- Appends/updates new day in `data/karachi_daily_aqi_weather.csv`.
 
-2. **Processing (`src/preprocess_daily_data.py`):**
-   - Cleans, fills, outlier-caps, feature engineers, encodes, and saves to `processed_data/`.
+### 2. Processing (`src/preprocess_daily_data.py`)
+- Cleans, fills, outlier-caps, feature engineers, and encodes data.
+- Saves processed output to `processed_data/`.
 
-3. **Model Training (`src/lstm_model_training.py`):**
-   - Trains an LSTM on recent data (sequence: 7 days).
-   - Evaluates, logs (MAE, RMSE, R²), and only saves if improved.
+### 3. Model Training (`src/lstm_model_training.py`)
+- Trains an **LSTM** on recent data (sequence length: 7 days).
+- Evaluates model (MAE, RMSE, R²) and only saves if performance improves.
 
-4. **Prediction (`src/predict.py`):**
-   - Loads best model & scalers.
-   - Predicts next 3 days' AQI (auto-updates `predictions/next_3_days.csv`).
+### 4. Prediction (`src/predict.py`)
+- Loads best model & scalers.
+- Predicts next 3 days' AQI.
+- Auto-updates `predictions/next_3_days.csv`.
 
-5. **Dashboard (`app.py`):**
-   - Loads all above data.
-   - Provides multi-tab, interactive visual analytics and forecast.
+### 5. LIME Explanations (`src/lime_explanations.py`)
+- Generates **local explanations** for individual AQI predictions.
+- Produces:
+  - `lime_report.html` – interactive breakdown.
+  - `lime_plotly_chart.json` – dashboard visualization.
+  - `lime_feature_contributions.xlsx` – tabular feature weights.
+- Displays explanations in dashboard for improved interpretability.
 
-6. **CI/CD (`.github/workflows/aqi_pipeline.yml`):**
-   - Runs entire pipeline daily (and on push) via GitHub Actions.
-   - Commits latest prediction to repo for live dashboard.
+### 6. Dashboard (`app.py`)
+- Loads data, predictions, and LIME explanations.
+- Provides multi-tab, interactive visual analytics and forecasts.
+
+### 7. CI/CD (`.github/workflows/aqi_pipeline.yml`)
+- Runs entire pipeline **daily** and **on push** via GitHub Actions.
+- Commits latest predictions & LIME outputs for live dashboard updates.
+
 
 ---
 
@@ -137,29 +153,34 @@ streamlit run app.py
 
 ```yaml
 name: Karachi AQI Daily CI/CD Pipeline
+
 on:
   push:
     branches: [main]
   schedule:
     - cron: '0 3 * * *'  # Every day at 3 AM UTC (8 AM PKT)
+
 jobs:
   run-aqi-pipeline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python src/update_daily_data.py
       - run: python src/preprocess_daily_data.py
       - run: python src/lstm_model_training.py
       - run: python src/predict.py
+      - run: python src/lime_explanations.py
       - run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add predictions/next_3_days.csv
-          git commit -m "🔮 Auto: Daily AQI Prediction Update [skip ci]" || echo "No changes"
+          git add predictions/next_3_days.csv explanations/lime_explanations.json
+          git commit -m "🔮 Auto: Daily AQI Prediction & LIME Explanation Update [skip ci]" || echo "No changes"
           git push || echo "Nothing to push"
+
 ```
 
 ---
