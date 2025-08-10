@@ -85,6 +85,42 @@ This project helps build transparent, predictive environmental dashboards with e
 
 ## 📂 Folder Structure
 
+```
+karachi-aqi-app/
+├── app.py                           # Main Streamlit dashboard
+├── requirements.txt                 # Python dependencies
+├── src/                            # Data & ML pipeline scripts
+│   ├── update_daily_data.py         # Fetches & updates daily data
+│   ├── preprocess_daily_data.py     # Cleans, transforms, feature engineering
+│   ├── lstm_model_training.py       # Trains LSTM model & logs metrics
+│   ├── predict.py                   # Predicts next 3 days AQI
+│   ├── fetch_data.py                # Fetches data via APIs
+│   └── create_lime.py              # Generates LIME explanations for predictions
+├── data/
+│   └── karachi_daily_aqi_weather.csv # Raw daily AQI+weather (auto-updated)
+├── processed_data/
+│   └── daily_karachi_preprocessed.csv # Cleaned, engineered features
+├── predictions/
+│   └── next_3_days.csv              # LSTM forecast (auto-updated)
+├── lstm_model/
+│   ├── lstm_aqi_model.keras         # Saved model
+│   ├── scaler_X.pkl, scaler_y.pkl   # Scalers
+│   ├── metrics.json                 # Last model performance
+│   └── update_log.txt               # All update logs
+├── lime_explanations/                # LIME model interpretability outputs
+│   ├── lime_report.html               # Interactive LIME HTML explanation for last prediction
+│   ├── lime_plotly_chart.json         # Plotly JSON chart for dashboard rendering
+│   └── lime_feature_contributions.xlsx # Excel file with feature weights/contributions
+├── notebooks/                       # Jupyter notebooks for EDA & visualizations
+│   ├── *.ipynb                      # Interactive notebooks (EDA, ML, plots)
+│   └── visualizations/              # Saved charts/images from notebooks
+└── .github/workflows/
+    └── aqi_pipeline.yml             # CI/CD pipeline (auto daily update)
+```
+-------
+
+## ⚡ End-to-End Pipeline
+
 ### 1. Data Fetch (`src/update_daily_data.py`)
 - Pulls daily AQI & weather for Karachi (Open-Meteo API).
 - Appends/updates new day in `data/karachi_daily_aqi_weather.csv`.
@@ -105,9 +141,9 @@ This project helps build transparent, predictive environmental dashboards with e
 ### 5. LIME Explanations (`src/lime_explanations.py`)
 - Generates **local explanations** for individual AQI predictions.
 - Produces:
-  - `lime_explanation.html` – interactive breakdown.
-  - `lime_explanation.json` – dashboard visualization.
-  - `lime_explanation.xlsx` – tabular feature weights.
+  - `lime_report.html` – interactive breakdown.
+  - `lime_plotly_chart.json` – dashboard visualization.
+  - `lime_feature_contributions.xlsx` – tabular feature weights.
 - Displays explanations in dashboard for improved interpretability.
 
 ### 6. Dashboard (`app.py`)
@@ -122,11 +158,13 @@ This project helps build transparent, predictive environmental dashboards with e
 
 ## 🖥️ Run Locally
 
-bash
+```
 git clone https://github.com/SheemaMasood381/Pearls-Karachi-AQI-Prediction-for-next-3-days-.git
 cd Pearls-Karachi-AQI-Prediction-for-next-3-days-
 pip install -r requirements.txt
 streamlit run app.py
+```
+
 > **Note:** Ensure you have Python 3.7+ installed. You might need to install additional dependencies based on your environment.
 
 ---
