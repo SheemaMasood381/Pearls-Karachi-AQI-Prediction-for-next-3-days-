@@ -148,12 +148,13 @@ streamlit run app.py
 
 ## 🧬 Example: CI/CD Workflow
 
+```
 on:
   push:
     branches: [main]
   schedule:
     - cron: '0 3 * * *'  # Every day at 3 AM UTC (8 AM PKT)
-
+```
 
 
 > **Note:** Modify the cron schedule according to your needs. Ensure that the GitHub Actions workflow has the necessary permissions to push changes to your repository.
