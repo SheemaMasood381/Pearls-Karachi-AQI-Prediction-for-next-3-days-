@@ -8,3 +8,5 @@ joblib
 tensorflow
 streamlit
 plotly
+lime
+kaleido

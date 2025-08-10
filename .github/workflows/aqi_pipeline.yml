@@ -46,6 +46,24 @@ jobs:
         echo "▶ Running predict.py..."
         python src/predict.py || { echo "❌ Prediction failed"; exit 1; }
 
+    - name: 📊 Step 5 — Generate LIME Explanation
+      run: python create_lime.py
+
+    - name: Upload LIME outputs
+      uses: actions/upload-artifact@v4
+      with:
+        name: lime_explanations
+        path: lime_explanations/
+
+    - name: 🧪 Step 6 — Run UI Smoke Test
+      run: |
+        echo "▶ Testing Streamlit UI startup..."
+        nohup streamlit run app.py --server.headless true --server.port 8501 &
+        sleep 10
+        pkill streamlit
+        echo "✅ UI started and closed successfully"
+
+
     - name: 📤 Commit Latest AQI Predictions
       run: |
         git config --global user.name 'github-actions'
