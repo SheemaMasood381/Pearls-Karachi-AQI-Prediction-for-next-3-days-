@@ -2,3 +2,4 @@
 {"timestamp": "2025-08-08 06:03:48", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.88, "RMSE": 1.08, "R2": 0.9823, "note": "EarlyStopping(patience=20)"}
 {"timestamp": "2025-08-08 06:05:31", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.76, "RMSE": 0.88, "R2": 0.9855, "note": "EarlyStopping(patience=20)"}
 {"timestamp": "2025-08-08 06:08:12", "status": "UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 910, "test_samples": 30, "MAE": 0.56, "RMSE": 0.53, "R2": 0.9913, "note": "EarlyStopping(patience=20)"}
+{"timestamp": "2025-08-10 23:13:52", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 913, "test_samples": 30, "MAE": 0.93, "RMSE": 1.25, "R2": 0.9734, "note": "EarlyStopping(patience=20)"}
