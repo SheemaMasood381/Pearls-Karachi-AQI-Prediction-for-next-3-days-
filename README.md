@@ -42,7 +42,7 @@ A comprehensive, production-grade web application for visualizing, analyzing, an
 ## 🛠️ Tech Stack
 
 - **Frontend:** [Streamlit](https://streamlit.io/) (Plotly, custom HTML/CSS)
-- **Backend/ML:** Python, scikit-learn, TensorFlow (LSTM), pandas, NumPy
+- **Backend/ML:** Python, scikit-learn, TensorFlow (LSTM), pandas, NumPy , LIME
 - **Deployment:** Render.com (free web service)
 - **Data Sources:** Open-Meteo Air Quality & Weather APIs
 - **DevOps:** GitHub Actions (CI/CD, daily fetch/train/predict)
