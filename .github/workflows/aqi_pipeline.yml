@@ -75,6 +75,7 @@ jobs:
         git push || echo "⚠️ Nothing to push or push failed"
         else
         echo "❌ Prediction file not found!"
+        fi
        
 
     - name: 🚀 Trigger Render Deploy
