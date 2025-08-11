@@ -9,4 +9,4 @@ tensorflow
 streamlit
 plotly
 lime
-kaleido
+kaleido==0.2.1
