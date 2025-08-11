@@ -639,8 +639,23 @@ with tabs[2]:
     st.markdown("<hr style='border: 1px solid black;'>", unsafe_allow_html=True)
 
     # ================== LIME Explanation ==================
-    st.markdown("<h1 style='text-align: center; color: black;'>|| LIME Features' Contributions||</h1", unsafe_allow_html=True)
-    html_path, csv_path, png_path = generate_lime()
+    # Show heading
+    st.markdown("<h1 style='text-align: center; color: black;'>|| LIME Features' Contributions ||</h1>", unsafe_allow_html=True)
+
+    # Call LIME generate function, get all outputs
+    result = generate_lime()
+    html_path = result['html_path']
+    csv_path = result['csv_path']
+    png_path = result['png_path']   
+    intercept = result['intercept']
+    pred_local = result['pred_local']
+
+    # Show intercept and prediction with black font and center alignment
+    intercept_scalar = float(intercept)
+    st.markdown(f"<h3 style='color: black; text-align: center;'>Intercept: {intercept_scalar:.4f}</h3>", unsafe_allow_html=True)
+
+    pred_local_scalar = float(pred_local)
+    st.markdown(f"<h3 style='color: black; text-align: center;'>Local Prediction: {pred_local_scalar:.4f}</h3>", unsafe_allow_html=True)
 
     lime_df = pd.read_csv(csv_path)
 
