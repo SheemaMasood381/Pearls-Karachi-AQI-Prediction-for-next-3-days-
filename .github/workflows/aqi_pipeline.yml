@@ -72,6 +72,7 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add data/karachi_daily_aqi_weather.csv \
             predictions/next_3_days.csv \
+            processed_data/daily_karachi_preprocessed.csv 
             lime_explanations/ || echo "⚠️ Nothing to add"
         git commit -m "🔄 Auto: Daily data, prediction & LIME update" || echo "✅ No changes to commit"
         git push || echo "⚠️ Nothing to push"
