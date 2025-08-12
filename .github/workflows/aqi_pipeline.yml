@@ -71,12 +71,14 @@ jobs:
 
         if [ -f predictions/next_3_days.csv ]; then
         git add predictions/next_3_days.csv
-        git commit -m "🔮 Auto: Daily AQI Prediction Update [skip ci]" || echo "✅ No changes to commit"
+        git commit -m "🔮 Auto: Daily AQI Prediction Update" || echo "✅ No changes to commit"
         git push || echo "⚠️ Nothing to push or push failed"
         else
         echo "❌ Prediction file not found!"
         fi
        
+    - name: Wait before triggering deploy
+      run: sleep 20
 
     - name: 🚀 Trigger Render Deploy
       run: |
