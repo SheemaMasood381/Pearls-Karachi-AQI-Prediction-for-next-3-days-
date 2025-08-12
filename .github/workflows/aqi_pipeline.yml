@@ -69,8 +69,7 @@ jobs:
         git config --global user.name 'SheemaMasood381'
         git config --global user.email 'sheemamasood381@gmail.com'
 
-        if [ -f predictions/next_3_days.csv ]; then
-        git add predictions/next_3_days.csv
+        git add data/karachi_daily_aqi_weather.csv predictions/next_3_days.csv
         git commit -m "🔮 Auto: Daily AQI Prediction Update" || echo "✅ No changes to commit"
         git push || echo "⚠️ Nothing to push or push failed"
         else
