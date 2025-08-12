@@ -73,7 +73,7 @@ jobs:
         git add data/karachi_daily_aqi_weather.csv \
             predictions/next_3_days.csv \
             lime_explanations/ || echo "⚠️ Nothing to add"
-        git commit -m "🔄 Auto: Daily data & prediction update" || echo "✅ No changes to commit"
+        git commit -m "🔄 Auto: Daily data, prediction & LIME update" || echo "✅ No changes to commit"
         git push || echo "⚠️ Nothing to push"
 
     - name: Wait before triggering deploy
