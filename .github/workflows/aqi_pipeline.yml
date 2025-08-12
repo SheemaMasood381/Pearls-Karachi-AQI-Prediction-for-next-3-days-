@@ -15,6 +15,9 @@ jobs:
     steps:
     - name: 📥 Checkout Repository
       uses: actions/checkout@v3
+      with:
+        persist-credentials: true
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 🐍 Set up Python
       uses: actions/setup-python@v4
@@ -63,22 +66,18 @@ jobs:
         pkill streamlit
         echo "✅ UI started and closed successfully"
 
-
-    - name: 📤 Commit Latest AQI Predictions
+    - name: 📤 Commit Latest AQI Data & Predictions
       run: |
-        git config --global user.name 'SheemaMasood381'
-        git config --global user.email 'sheemamasood381@gmail.com'
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add data/karachi_daily_aqi_weather.csv predictions/next_3_days.csv || echo "⚠️ Nothing to add"
+        git commit -m "🔄 Auto: Daily data & prediction update" || echo "✅ No changes to commit"
+        git push || echo "⚠️ Nothing to push"
 
-        git add data/karachi_daily_aqi_weather.csv predictions/next_3_days.csv
-        git commit -m "🔮 Auto: Daily AQI Prediction Update" || echo "✅ No changes to commit"
-        git push || echo "⚠️ Nothing to push or push failed"
-        else
-        echo "❌ Prediction file not found!"
-        fi
-       
     - name: Wait before triggering deploy
       run: sleep 20
 
     - name: 🚀 Trigger Render Deploy
       run: |
         curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        echo "✅ Render deployment triggered successfully"
