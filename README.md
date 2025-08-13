@@ -39,6 +39,8 @@ This project helps build transparent, predictive environmental dashboards with e
 - 📊 **Interactive Visualization:** Empowers users to explore air quality trends through intuitive dashboards.
 
 📍 This is a **Real-Time Karachi AQI Prediction Web App** that forecasts the next **3 days of air quality**, visualizes trends, and compares pollution levels with **WHO standards**.
+
+
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit&Render-brightgreen?style=for-the-badge&logo=streamlit&render)](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com/)
 
 -----------
