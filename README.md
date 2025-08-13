@@ -28,9 +28,6 @@
 
 **Karachi-AQI-Prediction** is a comprehensive tool designed for real-time air quality monitoring and forecasting in Karachi. It integrates data collection, preprocessing, machine learning, and visualization to provide accurate and interpretable AQI predictions. This project delivers a 3-day forecast, trend analysis, and pollutant insights, adhering to WHO standards, and uses LIME for model interpretability.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-brightgreen?style=for-the-badge&logo=streamlit)](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com/)
-
-
 ### Why Karachi-AQI-Prediction?
 
 This project helps build transparent, predictive environmental dashboards with ease. The core features include:
@@ -42,6 +39,7 @@ This project helps build transparent, predictive environmental dashboards with e
 - 📊 **Interactive Visualization:** Empowers users to explore air quality trends through intuitive dashboards.
 
 📍 This is a **Real-Time Karachi AQI Prediction Web App** that forecasts the next **3 days of air quality**, visualizes trends, and compares pollution levels with **WHO standards**.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit&Render-brightgreen?style=for-the-badge&logo=streamlit&render)](https://pearls-karachi-aqi-prediction-for-next-3.onrender.com/)
 
 -----------
 <table style="width:100%; table-layout: fixed;">
