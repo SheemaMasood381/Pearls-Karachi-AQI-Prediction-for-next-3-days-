@@ -66,3 +66,4 @@
 {"timestamp": "2025-10-03 03:30:09", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 967, "test_samples": 30, "MAE": 1.95, "RMSE": 6.56, "R2": 0.9628, "note": "EarlyStopping(patience=20)"}
 {"timestamp": "2025-10-04 03:25:30", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 968, "test_samples": 30, "MAE": 1.75, "RMSE": 5.68, "R2": 0.9693, "note": "EarlyStopping(patience=20)"}
 {"timestamp": "2025-10-05 03:36:41", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 969, "test_samples": 30, "MAE": 2.06, "RMSE": 7.14, "R2": 0.9623, "note": "EarlyStopping(patience=20)"}
+{"timestamp": "2025-10-06 03:35:08", "status": "NOT UPDATED", "model_name": "lstm_aqi_model.keras", "train_samples": 970, "test_samples": 30, "MAE": 1.77, "RMSE": 4.4, "R2": 0.9761, "note": "EarlyStopping(patience=20)"}
